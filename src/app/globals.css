@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@theme {
+    --color-lamaSky: #c3ebfa;
+    --color-lamaSkyLight: #edf9fd;
+    --color-lamaPurple: #cfceff;
+    --color-lamaPurpleLight: #f1f0ff;
+    --color-lamaYellow: #fae27c;
+    --color-lamaYellowLight: #fefce8;
+}
 /*:root {*/
 /*  --background: #ffffff;*/
 /*  --foreground: #171717;*/
