@@ -40,7 +40,7 @@ export const teachersData = [
     address: "123 Main St, Anytown, USA",
   },
   {
-    id: 3,
+    id: 4,
     teacherId: "1234567890",
     name: "Jay French",
     email: "jay@gmail.com",
@@ -163,7 +163,7 @@ export const studentsData = [
     address: "123 Main St, Anytown, USA",
   },
   {
-    id: 3,
+    id: 4,
     studentId: "1234567890",
     name: "Jay French",
     email: "jay@gmail.com",
@@ -274,7 +274,7 @@ export const parentsData = [
     address: "123 Main St, Anytown, USA",
   },
   {
-    id: 3,
+    id: 4,
     name: "Jay French",
     students: ["Mollie Fitzgerald", "Ian Bryant"],
     email: "mike@geller.com",
@@ -348,7 +348,7 @@ export const subjectsData = [
     teachers: ["Lola Newman", "Darrell Delgado"],
   },
   {
-    id: 3,
+    id: 4,
     name: "Chemistry",
     teachers: ["Nathan Kelly", "Benjamin Snyder"],
   },
@@ -407,7 +407,7 @@ export const classesData = [
     supervisor: "Tom Bennett",
   },
   {
-    id: 3,
+    id: 4,
     name: "4B",
     capacity: 18,
     grade: 3,
@@ -477,7 +477,7 @@ export const lessonsData = [
     teacher: "Della Dunn",
   },
   {
-    id: 3,
+    id: 4,
     subject: "Social Studies",
     class: "1B",
     teacher: "Bruce Rodriguez",
@@ -543,7 +543,7 @@ export const examsData = [
     date: "2025-01-01",
   },
   {
-    id: 3,
+    id: 4,
     subject: "Social Studies",
     class: "1B",
     teacher: "Alvin Swanson",
@@ -616,7 +616,7 @@ export const assignmentsData = [
     dueDate: "2025-01-01",
   },
   {
-    id: 3,
+    id: 4,
     subject: "Social Studies",
     class: "1B",
     teacher: "Willie Medina",
@@ -698,7 +698,7 @@ export const resultsData = [
     score: 90,
   },
   {
-    id: 3,
+    id: 4,
     subject: "Social Studies",
     class: "1B",
     teacher: "John Doe",
@@ -795,7 +795,7 @@ export const eventsData = [
     endTime: "11:00",
   },
   {
-    id: 3,
+    id: 4,
     title: "Museum Trip",
     class: "4A",
     date: "2025-01-01",
@@ -872,7 +872,7 @@ export const announcementsData = [
     date: "2025-01-01",
   },
   {
-    id: 3,
+    id: 4,
     title: "About 6A Math Test",
     class: "6A",
     date: "2025-01-01",
@@ -914,7 +914,6 @@ export const announcementsData = [
     date: "2025-01-01",
   },
 ];
-
 
 // YOU SHOULD CHANGE THE DATES OF THE EVENTS TO THE CURRENT DATE TO SEE THE EVENTS ON THE CALENDAR
 export const calendarEvents = [
