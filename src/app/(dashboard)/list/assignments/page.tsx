@@ -38,8 +38,6 @@ const columns = [
     header: "Actions",
     accessor: "action",
   },
-
-
 ]
 
 const AssignmentListPage = () => {
@@ -51,6 +49,7 @@ const AssignmentListPage = () => {
         </td>
 
         <td className="">{item.class}</td>
+
 
         <td className="hidden md:table-cell">{item.teacher}</td>
         <td className="hidden md:table-cell">{item.dueDate}</td>
@@ -80,16 +79,19 @@ const AssignmentListPage = () => {
       <div className="flex items-center justify-between">
         <h1 className="hidden md:block text-lg font-semibold">All Assignments</h1>
         <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
+
+          <div className=""></div>
+          
           <TableSearch />
           <div className="flex items-center gap-4 self-end">
-            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
+            <button className="cursor-pointer w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
               <Image src="/filter.png" alt='' width={14} height={14} />
             </button>
-            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
+            <button className="cursor-pointer w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
               <Image src="/sort.png" alt='' width={14} height={14} />
             </button>
             {role === "admin" && (
-              <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
+              <button className="cursor-pointer w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
                 <Image src="/plus.png" alt='' width={14} height={14} />
               </button>
             )}
