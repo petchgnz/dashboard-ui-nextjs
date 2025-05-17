@@ -1,5 +1,10 @@
-export default function Home() {
+const HomePage = () => {
   return (
-    <div>HomePage</div>
-  );
+    <div className=''>
+      <h1>HomePage</h1>
+      <p>This is the main page</p>
+    </div>
+  )
 }
+
+export default HomePage
