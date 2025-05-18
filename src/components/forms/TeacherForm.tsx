@@ -1,8 +1,8 @@
-'use client';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import { z } from 'zod';
-import InputField from '../InputField';
+'use client'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
+import { z } from 'zod'
+import InputField from '../InputField'
 
 const schema = z.object({
   username: z
@@ -20,47 +20,43 @@ const schema = z.object({
   birthday: z.date({ message: 'Birthday is required!' }),
   sex: z.enum(['male', 'female'], { message: 'Sex is required! ' }),
   img: z.instanceof(File, { message: 'Image is required!' }),
-});
+})
 
-type Inputs = z.infer<typeof schema>;
+type Inputs = z.infer<typeof schema>
 
 const TeacherForm = ({
   type,
   data,
 }: {
-  type: 'create' | 'update';
-  data?: any;
+  type: 'create' | 'update'
+  data?: any
 }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<Inputs>({ resolver: zodResolver(schema) });
+  } = useForm<Inputs>({ resolver: zodResolver(schema) })
 
   const onSubmit = handleSubmit((data) => {
-    console.log(data);
-  });
+    console.log(data)
+  })
 
   return (
-    <form
-      action=''
-      className='flex flex-col gap-8'
-      onSubmit={onSubmit}
-    >
-      <h1 className='text-xl font-semibold'>Create a new teacher</h1>
-      <span className='text-xs text-gray-400 font-medium'>
+    <form action="" className="flex flex-col gap-8" onSubmit={onSubmit}>
+      <h1 className="text-xl font-semibold">Create a new teacher</h1>
+      <span className="text-xs font-medium text-gray-400">
         Authentication Information
       </span>
 
       <InputField
-        label='Username'
-        name='username'
+        label="Username"
+        name="username"
         defaultValue={data?.username}
         register={register}
         error={errors?.username}
       />
     </form>
-  );
-};
+  )
+}
 
-export default TeacherForm;
+export default TeacherForm
