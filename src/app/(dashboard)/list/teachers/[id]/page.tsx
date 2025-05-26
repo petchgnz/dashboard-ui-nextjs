@@ -1,6 +1,7 @@
 import Announcements from "@/components/Announcements"
 import BigCalendar from "@/components/BigCalendar"
 import Performance from "@/components/Performance"
+import SmallCard from "@/components/SmallCard"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -71,66 +72,11 @@ const SingleTeacherPage = () => {
           </div>
 
           {/* SMALL CARD */}
-          <div className="flex-1 flex gap-4 justify-between flex-wrap sm:grid sm:grid-cols-2">
-            {/* CARD */}
-            <div className="bg-white p-4 rounded-md flex gap-4 w-full">
-              <Image
-                src='/singleAttendance.png'
-                alt=''
-                width={24}
-                height={24}
-                className="w-6 h-6"
-              />
-              <div className="">
-                <h1 className="text-xl font-semibold">90%</h1>
-                <span className="text-sm text-gray-400">Attendance</span>
-              </div>
-            </div>
-
-            {/* CARD */}
-            <div className="bg-white p-4 rounded-md flex gap-4 w-full">
-              <Image
-                src='/singleBranch.png'
-                alt=''
-                width={24}
-                height={24}
-                className="w-6 h-6"
-              />
-              <div className="">
-                <h1 className="text-xl font-semibold">2</h1>
-                <span className="text-sm text-gray-400">Branches</span>
-              </div>
-            </div>
-
-            {/* CARD */}
-            <div className="bg-white p-4 rounded-md flex gap-4 w-full">
-              <Image
-                src='/singleLesson.png'
-                alt=''
-                width={24}
-                height={24}
-                className="w-6 h-6"
-              />
-              <div className="">
-                <h1 className="text-xl font-semibold">6</h1>
-                <span className="text-sm text-gray-400">Lessons</span>
-              </div>
-            </div>
-
-            {/* CARD */}
-            <div className="bg-white p-4 rounded-md flex gap-4 w-full">
-              <Image
-                src='/singleClass.png'
-                alt=''
-                width={24}
-                height={24}
-                className="w-6 h-6"
-              />
-              <div className="">
-                <h1 className="text-xl font-semibold">6</h1>
-                <span className="text-sm text-gray-400">Classes</span>
-              </div>
-            </div>
+          <div className="flex-1 flex gap-4 justify-between flex-wrap sm:grid sm:grid-cols-2 ">
+            <SmallCard icons="/singleAttendance.png" desc="Attendance" title="90%" />
+            <SmallCard icons="/singleBranch.png" desc="Branches" title="2" />
+            <SmallCard icons="/singleLesson.png" desc="Lessons" title="5" />
+            <SmallCard icons="/singleClass.png" desc="Classes" title="8" />
           </div>
         </div>
 
