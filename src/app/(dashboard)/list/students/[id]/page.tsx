@@ -7,7 +7,7 @@ import { studentsData } from '@/lib/data'
 import { notFound } from 'next/navigation'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default function SingleStudentPage({ params }: any) {
+export default function SingleStudentPage({ params }: { params: { id: string } }) {
   const id = Number(params.id)
   const student = studentsData.find(s => s.id === id)
   if (!student) return notFound()
