@@ -60,7 +60,10 @@ const ExamListPage = () => {
           <div className="flex items-center gap-2">
             {role === "admin" && (
               <>
-                <FormModel table="announcement" type="update" data={item} />
+                {/* <FormModel table="announcement" type="update" data={item} /> */}
+                <button className="bg-lamaSky flex h-7 w-7 cursor-not-allowed items-center justify-center rounded-full">
+                  <Image src="/update.png" alt="" width={14} height={14} />
+                </button>
                 <FormModel table="announcement" type="delete" id={item.id} />
               </>
             )}
@@ -86,7 +89,10 @@ const ExamListPage = () => {
               <Image src="/sort.png" alt='' width={14} height={14} />
             </button>
             {role === "admin" && (
-              <FormModel table="announcement" type="create" />
+              <button className="bg-lamaYellow flex h-8 w-8 cursor-not-allowed items-center justify-center rounded-full">
+                <Image src="/create.png" alt="" width={14} height={14} />
+              </button>
+              // <FormModel table="announcement" type="create" />
             )}
           </div>
         </div>

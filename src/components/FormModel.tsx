@@ -37,7 +37,7 @@ const FormModel = ({
         <span className='text-center font-medium'>
           All data will be lost. Are you sure you want to delete this {table}?
         </span>
-        <button className='cursor-pointer bg-red-700 text-white py-2 px-4 rounded-md border-none w-max self-center'>
+        <button disabled={true} className='disabled:bg-gray-300 disabled:cursor-not-allowed text-white py-2 px-4 rounded-md border-none w-max self-center'>
           Delete
         </button>
       </form>
@@ -57,7 +57,7 @@ const FormModel = ({
   return (
     <>
       <button
-        className={`${size}  cursor-pointer ${bgColor} flex items-center justify-center rounded-full`}
+        className={`${size} cursor-pointer ${bgColor} flex items-center justify-center rounded-full`}
         onClick={() => setOpen(true)}
       >
         <Image

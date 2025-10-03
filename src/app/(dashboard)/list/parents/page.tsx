@@ -1,53 +1,53 @@
-import FormModel from "@/components/FormModel"
-import Pagination from "@/components/Pagination"
-import Table from "@/components/Table"
-import TableSearch from "@/components/TableSearch"
-import { parentsData, role } from "@/lib/data"
-import Image from "next/image"
-import Link from "next/link"
+import FormModel from '@/components/FormModel'
+import Pagination from '@/components/Pagination'
+import Table from '@/components/Table'
+import TableSearch from '@/components/TableSearch'
+import { parentsData, role } from '@/lib/data'
+import Image from 'next/image'
+import Link from 'next/link'
 
 type Parent = {
-  id: number,
-  name: string,
-  email?: string;
-  students: string[],
-  phone?: string,
-  address: string,
+  id: number
+  name: string
+  email?: string
+  students: string[]
+  phone?: string
+  address: string
 }
-
 
 const columns = [
   {
-    header: "Info",
-    accessor: "info"
+    header: 'Info',
+    accessor: 'info',
   },
   {
-    header: "Student Names",
-    accessor: "studentNames",
-    className: "hidden md:table-cell"
+    header: 'Student Names',
+    accessor: 'studentNames',
+    className: 'hidden md:table-cell',
   },
   {
-    header: "Phone",
-    accessor: "phone",
-    className: "hidden md:table-cell"
+    header: 'Phone',
+    accessor: 'phone',
+    className: 'hidden md:table-cell',
   },
   {
-    header: "Address",
-    accessor: "address",
-    className: "hidden md:table-cell"
+    header: 'Address',
+    accessor: 'address',
+    className: 'hidden md:table-cell',
   },
   {
-    header: "Actions",
-    accessor: "action",
+    header: 'Actions',
+    accessor: 'action',
   },
-
-
 ]
 
 const ParentListPage = () => {
   const renderRow = (item: Parent) => {
     return (
-      <tr className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-lamaPurpleLight" key={item.id}>
+      <tr
+        className="hover:bg-lamaPurpleLight border-b border-gray-200 text-sm even:bg-slate-50"
+        key={item.id}
+      >
         <td className="flex items-center gap-4 p-4">
           {/* <Image
             src={item.photo}
@@ -65,36 +65,40 @@ const ParentListPage = () => {
         <td className="hidden md:table-cell">{item.address}</td>
         <td className="">
           <div className="flex items-center gap-2">
-
-            {role === "admin" && (
+            {role === 'admin' && (
               <>
-                <FormModel table="parent" type="update" data={item} />
+                {/* <FormModel table="parent" type="update" data={item} /> */}
+                <button className="bg-lamaSky flex h-7 w-7 cursor-not-allowed items-center justify-center rounded-full">
+                  <Image src="/update.png" alt="" width={14} height={14} />
+                </button>
                 <FormModel table="parent" type="delete" id={item.id} />
               </>
             )}
           </div>
         </td>
-      </tr >
+      </tr>
     )
   }
 
-
   return (
-    <div className='bg-white p-4 rounded-md flex-1 m-4 mt-0'>
+    <div className="m-4 mt-0 flex-1 rounded-md bg-white p-4">
       {/* TOP */}
       <div className="flex items-center justify-between">
-        <h1 className="hidden md:block text-lg font-semibold">All Parents</h1>
-        <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
+        <h1 className="hidden text-lg font-semibold md:block">All Parents</h1>
+        <div className="flex w-full flex-col items-center gap-4 md:w-auto md:flex-row">
           <TableSearch />
           <div className="flex items-center gap-4 self-end">
-            <button className="cursor-pointer w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
-              <Image src="/filter.png" alt='' width={14} height={14} />
+            <button className="bg-lamaYellow flex h-8 w-8 cursor-pointer items-center justify-center rounded-full">
+              <Image src="/filter.png" alt="" width={14} height={14} />
             </button>
-            <button className="cursor-pointer w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
-              <Image src="/sort.png" alt='' width={14} height={14} />
+            <button className="bg-lamaYellow flex h-8 w-8 cursor-pointer items-center justify-center rounded-full">
+              <Image src="/sort.png" alt="" width={14} height={14} />
             </button>
-            {role === "admin" && (
-              <FormModel table="parent" type="create" />
+            {role === 'admin' && (
+              <button className="bg-lamaYellow flex h-8 w-8 cursor-not-allowed items-center justify-center rounded-full">
+                <Image src="/create.png" alt="" width={14} height={14} />
+              </button>
+              // <FormModel table="parent" type="create" />
             )}
           </div>
         </div>

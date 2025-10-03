@@ -1,121 +1,121 @@
-import { role } from "@/lib/data";
-import Image from "next/image";
-import Link from "next/link";
+import { role } from '@/lib/data'
+import Image from 'next/image'
+import Link from 'next/link'
 
 const menuItems = [
   {
-    title: "MENU",
+    title: 'MENU',
     items: [
       {
-        icon: "/home.png",
-        label: "Home",
-        href: "/admin",
-        visible: ["admin", "teacher", "student", "parent"],
+        icon: '/home.png',
+        label: 'Home',
+        href: '/admin',
+        visible: ['admin', 'teacher', 'student', 'parent'],
       },
       {
-        icon: "/teacher.png",
-        label: "Teachers",
-        href: "/list/teachers",
-        visible: ["admin", "teacher"],
+        icon: '/teacher.png',
+        label: 'Teachers',
+        href: '/list/teachers',
+        visible: ['admin', 'teacher'],
       },
       {
-        icon: "/student.png",
-        label: "Students",
-        href: "/list/students",
-        visible: ["admin", "teacher"],
+        icon: '/student.png',
+        label: 'Students',
+        href: '/list/students',
+        visible: ['admin', 'teacher'],
       },
       {
-        icon: "/parent.png",
-        label: "Parents",
-        href: "/list/parents",
-        visible: ["admin", "teacher"],
+        icon: '/parent.png',
+        label: 'Parents',
+        href: '/list/parents',
+        visible: ['admin', 'teacher'],
       },
       {
-        icon: "/subject.png",
-        label: "Subjects",
-        href: "/list/subjects",
-        visible: ["admin"],
+        icon: '/subject.png',
+        label: 'Subjects',
+        href: '/list/subjects',
+        visible: ['admin'],
       },
       {
-        icon: "/class.png",
-        label: "Classes",
-        href: "/list/classes",
-        visible: ["admin", "teacher"],
+        icon: '/class.png',
+        label: 'Classes',
+        href: '/list/classes',
+        visible: ['admin', 'teacher'],
       },
       {
-        icon: "/lesson.png",
-        label: "Lessons",
-        href: "/list/lessons",
-        visible: ["admin", "teacher"],
+        icon: '/lesson.png',
+        label: 'Lessons',
+        href: '/list/lessons',
+        visible: ['admin', 'teacher'],
       },
       {
-        icon: "/exam.png",
-        label: "Exams",
-        href: "/list/exams",
-        visible: ["admin", "teacher", "student", "parent"],
+        icon: '/exam.png',
+        label: 'Exams',
+        href: '/list/exams',
+        visible: ['admin', 'teacher', 'student', 'parent'],
       },
       {
-        icon: "/assignment.png",
-        label: "Assignments",
-        href: "/list/assignments",
-        visible: ["admin", "teacher", "student", "parent"],
+        icon: '/assignment.png',
+        label: 'Assignments',
+        href: '/list/assignments',
+        visible: ['admin', 'teacher', 'student', 'parent'],
       },
       {
-        icon: "/result.png",
-        label: "Results",
-        href: "/list/results",
-        visible: ["admin", "teacher", "student", "parent"],
+        icon: '/result.png',
+        label: 'Results',
+        href: '/list/results',
+        visible: ['admin', 'teacher', 'student', 'parent'],
       },
       {
-        icon: "/attendance.png",
-        label: "Attendance",
-        href: "/list/attendance",
-        visible: ["admin", "teacher", "student", "parent"],
+        icon: '/attendance.png',
+        label: 'Attendance',
+        href: '/list/attendance',
+        visible: ['admin', 'teacher', 'student', 'parent'],
       },
       {
-        icon: "/calendar.png",
-        label: "Events",
-        href: "/list/events",
-        visible: ["admin", "teacher", "student", "parent"],
+        icon: '/calendar.png',
+        label: 'Events',
+        href: '/list/events',
+        visible: ['admin', 'teacher', 'student', 'parent'],
       },
       {
-        icon: "/message.png",
-        label: "Messages",
-        href: "/list/messages",
-        visible: ["admin", "teacher", "student", "parent"],
+        icon: '/message.png',
+        label: 'Messages',
+        href: '/list/messages',
+        visible: ['admin', 'teacher', 'student', 'parent'],
       },
       {
-        icon: "/announcement.png",
-        label: "Announcements",
-        href: "/list/announcements",
-        visible: ["admin", "teacher", "student", "parent"],
+        icon: '/announcement.png',
+        label: 'Announcements',
+        href: '/list/announcements',
+        visible: ['admin', 'teacher', 'student', 'parent'],
       },
     ],
   },
   {
-    title: "OTHER",
+    title: 'OTHER',
     items: [
       {
-        icon: "/profile.png",
-        label: "Profile",
-        href: "/profile",
-        visible: ["admin", "teacher", "student", "parent"],
+        icon: '/profile.png',
+        label: 'Profile',
+        href: '/profile',
+        visible: ['admin', 'teacher', 'student', 'parent'],
       },
       {
-        icon: "/setting.png",
-        label: "Settings",
-        href: "/settings",
-        visible: ["admin", "teacher", "student", "parent"],
+        icon: '/setting.png',
+        label: 'Settings',
+        href: '/settings',
+        visible: ['admin', 'teacher', 'student', 'parent'],
       },
       {
-        icon: "/logout.png",
-        label: "Logout",
-        href: "/logout",
-        visible: ["admin", "teacher", "student", "parent"],
+        icon: '/logout.png',
+        label: 'Logout',
+        href: '/logout',
+        visible: ['admin', 'teacher', 'student', 'parent'],
       },
     ],
   },
-];
+]
 
 const Menu = () => {
   return (
@@ -123,14 +123,19 @@ const Menu = () => {
       {/* Menu Title */}
       {menuItems.map((menu) => (
         <div className="flex flex-col gap-2" key={menu.title}>
-          <span className="hidden lg:block text-gray-400 font-light my-4">
+          <span className="my-4 hidden font-light text-gray-400 lg:block">
             {menu.title}
           </span>
 
           {/* Menu Items */}
           {menu.items.map((item) => {
-            const isVisible = item.visible.includes(role);
-            const isDisable = item.label === "Attendance" || item.label === "Messages";
+            const isVisible = item.visible.includes(role)
+            const isDisable =
+              item.label === 'Attendance' ||
+              item.label === 'Messages' ||
+              item.label === 'Profile' ||
+              item.label === 'Settings' ||
+              item.label === 'Logout'
 
             if (!isVisible) return null
 
@@ -138,34 +143,27 @@ const Menu = () => {
               return (
                 <div
                   key={item.label}
-                  className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-2 md:px-2 rounded-md cursor-default opacity-40 bg-gray-300">
-                    <Image 
-                      src={item.icon}
-                      alt=''
-                      width={20}
-                      height={20}
-                    />
-                    <span className="hidden lg:block">{item.label}</span>
-                  </div>
-              );
+                  className="flex cursor-default items-center justify-center gap-4 rounded-md bg-gray-300 py-2 text-gray-500 opacity-40 md:px-2 lg:justify-start"
+                >
+                  <Image src={item.icon} alt="" width={20} height={20} />
+                  <span className="hidden lg:block">{item.label}</span>
+                </div>
+              )
             }
 
             return (
               <Link
                 key={item.label}
                 href={item.href}
-                className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-2 md:px-2 rounded-md hover:bg-lamaSkyLight"
+                className="hover:bg-lamaSkyLight flex items-center justify-center gap-4 rounded-md py-2 text-gray-500 md:px-2 lg:justify-start"
               >
                 <Image src={item.icon} alt="" width={20} height={20} />
                 <span className="hidden lg:block">{item.label}</span>
               </Link>
             )
-
           })}
         </div>
       ))}
-
-
     </div>
   )
 }

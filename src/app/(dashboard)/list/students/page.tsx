@@ -74,7 +74,7 @@ const StudentListPage = () => {
         <td className="hidden md:table-cell">{item.address}</td>
         <td className="">
           <div className="flex items-center gap-2">
-            <Link href={`/list/teachers/${item.id}`} className="cursor-pointer">
+            <Link href={`/list/students/${item.id}`} className="cursor-pointer">
               <button className="cursor-pointer w-7 h-7 flex items-center justify-center rounded-full bg-lamaSky">
                 <Image src="/view.png" alt="" width={16} height={16} />
               </button>
@@ -107,10 +107,10 @@ const StudentListPage = () => {
               <Image src="/sort.png" alt='' width={14} height={14} />
             </button>
             {role === "admin" && (
-              // <button className="cursor-pointer w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
-              //   <Image src="/plus.png" alt='' width={14} height={14} />
-              // </button>
-              <FormModel table="student" type="create" />
+              <button className="cursor-not-allowed w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
+                <Image src="/create.png" alt='' width={14} height={14} />
+              </button>
+              // <FormModel table="student" type="create" />
             )}
           </div>
         </div>
