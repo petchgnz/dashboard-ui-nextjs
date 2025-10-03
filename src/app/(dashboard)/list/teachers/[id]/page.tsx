@@ -7,11 +7,7 @@ import Link from "next/link"
 import { teachersData } from '@/lib/data'
 import { notFound } from 'next/navigation'
 
-type Props = {
-  params: { id: string }
-}
-
-const SingleTeacherPage = ({ params }: Props) => {
+export default function SingleTeacherPage({ params }: { params: { id: string } }) {
   const id = Number(params.id)
   const teacher = teachersData.find(t => t.id === id)
   if (!teacher) return notFound()
@@ -125,5 +121,3 @@ const SingleTeacherPage = ({ params }: Props) => {
     </div>
   )
 }
-
-export default SingleTeacherPage

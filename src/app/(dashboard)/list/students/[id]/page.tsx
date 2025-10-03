@@ -6,9 +6,7 @@ import Link from "next/link"
 import { studentsData } from '@/lib/data'
 import { notFound } from 'next/navigation'
 
-type Props = { params: { id: string } }
-
-const SingleStudentPage = ({ params }: Props) => {
+export default function SingleStudentPage({ params }: { params: { id: string } }) {
   const id = Number(params.id)
   const student = studentsData.find(s => s.id === id)
   if (!student) return notFound()
@@ -176,5 +174,3 @@ const SingleStudentPage = ({ params }: Props) => {
     </div>
   )
 }
-
-export default SingleStudentPage
