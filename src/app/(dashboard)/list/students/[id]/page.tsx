@@ -9,9 +9,9 @@ import { notFound } from 'next/navigation'
 const SingleStudentPage = async ({
   params,
 }: {
-  params: Promise<{ id: string }>
+  params: { id: string }
 }) => {
-  const { id } = await params;
+  const { id } = params;
   const numId = parseInt(id)
   const student = studentsData.find((s) => s.id === numId)
   if (!student) return notFound()
