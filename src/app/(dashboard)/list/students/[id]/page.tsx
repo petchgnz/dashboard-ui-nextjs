@@ -16,7 +16,7 @@ const SingleStudentPage = ({ params }: Props) => {
   const attendance = '94%'
   const grade = student.grade
   const lessons = 6
-  const className = student.class
+  const studentClass = student.class
 
   return (
     <div className='flex-1 p-4 flex flex-col xl:flex-row gap-4'>
@@ -141,7 +141,7 @@ const SingleStudentPage = ({ params }: Props) => {
                 className="w-6 h-6"
               />
               <div className="">
-                <h1 className="text-xl font-semibold">{className}</h1>
+                <h1 className="text-xl font-semibold">{studentClass}</h1>
                 <span className="text-sm text-gray-400">Class Name</span>
               </div>
             </div>
